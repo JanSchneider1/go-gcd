@@ -2,7 +2,7 @@ package gcd
 
 import "errors"
 
-func gcd(a, b int) (int, error) {
+func Gcd(a, b int) (int, error) {
 	return greatestCommonDivisor(a, b)
 }
 

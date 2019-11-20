@@ -15,7 +15,7 @@ func TestGcdReturnsCorrectResult(t *testing.T) {
 	}
 	// When
 	for _, c := range cases {
-		actual, err := gcd(c.a, c.b)
+		actual, err := Gcd(c.a, c.b)
 		// Then
 		if err != nil || actual != c.expected {
 			t.Errorf("expected gdc(%d, %d) to be %d, but got %d", c.a, c.b, c.expected, actual)
@@ -32,7 +32,7 @@ func TestGcdThrowsErrorForNegativeNumbers(t *testing.T) {
 	}
 	// When
 	for _, c := range cases {
-		_, err := gcd(c.a, c.b)
+		_, err := Gcd(c.a, c.b)
 		// Then
 		if err == nil {
 			t.Errorf("expected error to be thrown for gdc(%d, %d)", c.a, c.b)
@@ -49,7 +49,7 @@ func TestGcdThrowsErrorForZero(t *testing.T) {
 	}
 	// When
 	for _, c := range cases {
-		_, err := gcd(c.a, c.b)
+		_, err := Gcd(c.a, c.b)
 		// Then
 		if err == nil {
 			t.Errorf("expected error to be thrown for gdc(%d, %d)", c.a, c.b)
