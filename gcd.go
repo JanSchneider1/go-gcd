@@ -1,23 +1,19 @@
-package main
+package gcd
 
-import "fmt"
+import "errors"
 
-func main(){
-	fmt.Println(gcd(16, 2))
-	fmt.Println(gcd(16, 1))
-	fmt.Println(gcd(16, 6))
-	fmt.Println(gcd(63, 20))
-	fmt.Println(gcd(2530, 120))
-}
-
-func gcd(a, b int) int{
+func gcd(a, b int) (int, error) {
 	return greatestCommonDivisor(a, b)
 }
 
-func greatestCommonDivisor(a, b int) int {
-	// Invalid for negative numbers
+func greatestCommonDivisor(a, b int) (int, error) {
+	// Throw error if input is 0
+	if a == 0 || b == 0 {
+		return 0, errors.New("cannot determine gcd with number 0")
+	}
+	// Throw error if input is negative
 	if a < 0 || b < 0 {
-		return 0
+		return 0, errors.New("cannot determine gcd for negative numbers")
 	}
 	// Ensure a is bigger that b
 	if b > a {
@@ -29,5 +25,5 @@ func greatestCommonDivisor(a, b int) int {
 		a, b = b, rest
 		rest = a % b
 	}
-	return b
+	return b, nil
 }
