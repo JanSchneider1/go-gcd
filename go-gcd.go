@@ -1,3 +1,6 @@
+/*
+ * Command line tool for calculating the 'greatest common divisor'
+ */
 package main
 
 import (

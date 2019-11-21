@@ -3,6 +3,12 @@
 A small command line tool written in go to calculate the
 greatest command divisor.
 
+# Installation
+
+```shell script
+$ go get github.com/JanSchneider1/go-gcd
+```
+
 # Usage
 
 ```shell_script
