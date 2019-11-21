@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"go-gcd"
+	"go-gcd/gcd"
 	"os"
 	"strconv"
 )
